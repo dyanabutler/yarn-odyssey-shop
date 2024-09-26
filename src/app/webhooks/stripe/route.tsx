@@ -9,7 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 const resend = new Resend(process.env.RESEND_API_KEY as string)
 
 export async function POST(req: NextRequest) {
-  const event = await stripe.webhooks.constructEvent(
+  const event = stripe.webhooks.constructEvent(
     await req.text(),
     req.headers.get("stripe-signature") as string,
     process.env.STRIPE_WEBHOOK_SECRET as string
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     })
 
     await resend.emails.send({
-      from: `Support <${process.env.SENDER_EMAIL}>`,
+      from: `Yarn Odyssey Shop <${process.env.SENDER_EMAIL}>`,
       to: email,
       subject: "Order Confirmation",
       react: (
