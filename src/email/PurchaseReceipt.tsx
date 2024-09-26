@@ -46,7 +46,7 @@ export default function PurchaseReceiptEmail({
         <Head />
         <Body className="font-sans bg-white">
           <Container className="max-w-xl">
-            <Heading>Purchase Receipt</Heading>
+            <Heading>Purchase Receipt for Yarn Odyssey Shop</Heading>
             <OrderInformation
               order={order}
               product={product}
