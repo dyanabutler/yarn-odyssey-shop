@@ -62,7 +62,7 @@ export default function OrderHistoryEmail({ orders }: OrderHistoryEmailProps) {
         <Head />
         <Body className="font-sans bg-white">
           <Container className="max-w-xl">
-            <Heading> Order History from Yarn Odyssey Shop</Heading>
+            <Heading> Your Order History from Yarn Odyssey Shop</Heading>
             {orders.map((order, index) => (
               <React.Fragment key={order.id}>
                 <OrderInformation
